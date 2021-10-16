@@ -3,14 +3,19 @@
     package="ie.wit.donationx">
 
     <application
+        android:name=".main.DonationXApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DonationX">
+
         <activity
-            android:name=".Donate"
+            android:name=".activites.Report"
+            android:exported="true" />
+        <activity
+            android:name=".activites.Donate"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
