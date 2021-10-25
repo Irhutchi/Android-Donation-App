@@ -16,6 +16,13 @@
     <!-- menu res -->
     <string name="action_donate">Donate</string>
     <string name="action_report">Report</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Nav Drawer Support -->
+    <string name="action_share">Share</string>
+    <string name="action_send">Send</string>
+    <string name="group_communicate">Communicate</string>
+
+    <string name="nav_header_title">DonationX </string>
+    <string name="nav_header_subtitle">voteforhomer@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
 </resources>
