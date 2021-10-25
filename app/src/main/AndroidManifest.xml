@@ -10,12 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DonationX">
-
         <activity
-            android:name=".activites.Report"
-            android:exported="true" />
-        <activity
-            android:name=".activites.Donate"
+            android:name=".activites.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

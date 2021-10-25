@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/dev/DonationX/app/src/main/res/layout/activity_donate.xml" value="0.1879432624113475" />
+        <entry key="..\:/dev/DonationX/app/src/main/res/layout/activity_home.xml" value="0.30104166666666665" />
         <entry key="..\:/dev/DonationX/app/src/main/res/layout/activity_report.xml" value="0.228125" />
         <entry key="..\:/dev/DonationX/app/src/main/res/layout/card_donation.xml" value="0.228125" />
+        <entry key="..\:/dev/DonationX/app/src/main/res/layout/fragment_donate.xml" value="0.3079710144927536" />
+        <entry key="..\:/dev/DonationX/app/src/main/res/layout/fragment_report.xml" value="0.3079710144927536" />
         <entry key="..\:/dev/DonationX/app/src/main/res/menu/menu_donate.xml" value="0.228125" />
         <entry key="..\:/dev/DonationX/app/src/main/res/menu/menu_report.xml" value="0.228125" />
       </map>
