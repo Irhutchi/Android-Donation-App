@@ -7,12 +7,24 @@
 
     <fragment
         android:id="@+id/donateFragment"
-        android:name="ie.wit.donationx.DonateFragment"
+        android:name="ie.wit.donationx.fragments.DonateFragment"
         android:label="fragment_donate"
-        tools:layout="@layout/fragment_donate" />
+        tools:layout="@layout/fragment_donate" >
+        <action
+            android:id="@+id/action_donateFragment_to_reportFragment"
+            app:destination="@id/reportFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
     <fragment
         android:id="@+id/reportFragment"
-        android:name="ie.wit.donationx.ReportFragment"
+        android:name="ie.wit.donationx.fragments.ReportFragment"
         android:label="fragment_report"
-        tools:layout="@layout/fragment_report" />
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_reportFragment_to_donateFragment2"
+            app:destination="@id/donateFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
 </navigation>
