@@ -31,4 +31,7 @@
     <string name="nav_header_subtitle">voteforhomer@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+    <!--    MVVM implementation-->
+    <string name="donationsNotFound">No Donations Yet...\nGo Make a Donation!</string>
+
 </resources>
