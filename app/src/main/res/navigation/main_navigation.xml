@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/donateFragment"
-        android:name="ie.wit.donationx.fragments.DonateFragment"
-        android:label="fragment_donate"
+        android:name="ie.wit.donationx.ui.donate.DonateFragment"
+        android:label="@string/action_donate"
         tools:layout="@layout/fragment_donate" >
         <action
             android:id="@+id/action_donateFragment_to_reportFragment"
@@ -18,18 +18,33 @@
     </fragment>
     <fragment
         android:id="@+id/reportFragment"
-        android:name="ie.wit.donationx.fragments.ReportFragment"
-        android:label="fragment_report"
+        android:name="ie.wit.donationx.ui.report.ReportFragment"
+        android:label="@string/action_report"
         tools:layout="@layout/fragment_report" >
         <action
-            android:id="@+id/action_reportFragment_to_donateFragment2"
+            android:id="@+id/action_reportFragment_to_donateFragment"
             app:destination="@id/donateFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_reportFragment_to_donationDetailFragment"
+            app:destination="@id/donationDetailFragment" />
     </fragment>
     <fragment
-        android:id="@+id/aboutUsFragment"
-        android:name="ie.wit.donationx.fragments.AboutUsFragment"
-        android:label="fragment_aboutus"
-        tools:layout="@layout/fragment_aboutus" />
+        android:id="@+id/aboutFragment"
+        android:name="ie.wit.donationx.ui.about.AboutFragment"
+        android:label="@string/action_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/donationDetailFragment"
+        android:name="ie.wit.donationx.ui.detail.DonationDetailFragment"
+        android:label="Donation Detail"
+        tools:layout="@layout/fragment_donation_detail" >
+        <action
+            android:id="@+id/action_donationDetailFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+        <argument
+            android:name="donationid"
+            app:argType="long" />
+    </fragment>
 </navigation>

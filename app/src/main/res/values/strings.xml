@@ -33,5 +33,13 @@
 
     <!--    MVVM implementation-->
     <string name="donationsNotFound">No Donations Yet...\nGo Make a Donation!</string>
+    <string name="donationError">Error : Couldn\'t Make a Donation...</string>
+
+    <!--    Donation Details-->
+    <string name="donationDetails">Donation Details</string>
+    <string name="amt">Amount :</string>
+    <string name="payment">Payment :</string>
+    <string name="message">Message :</string>
+    <string name="upvotes">UpVotes :</string>
 
 </resources>

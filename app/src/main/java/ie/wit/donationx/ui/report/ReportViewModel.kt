@@ -1,8 +1,10 @@
-package ie.wit.donationx.models
+package ie.wit.donationx.ui.report
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import ie.wit.donationx.models.DonationManager
+import ie.wit.donationx.models.DonationModel
 
 class ReportViewModel : ViewModel() {
 

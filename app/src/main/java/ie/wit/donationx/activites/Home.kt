@@ -1,4 +1,4 @@
-package ie.wit.donationx.activites
+package ie.wit.donationx.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +7,6 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.*
 import androidx.navigation.ui.*
 import ie.wit.donationx.R
-import ie.wit.donationx.R.id.aboutUsFragment
 import ie.wit.donationx.databinding.HomeBinding
 
 class Home : AppCompatActivity() {
@@ -29,13 +28,23 @@ class Home : AppCompatActivity() {
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.donateFragment, R.id.reportFragment, aboutUsFragment,
-        ), drawerLayout)
+            R.id.donateFragment, R.id.reportFragment, R.id.aboutFragment), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
 
         val navView = homeBinding.navView
         navView.setupWithNavController(navController)
+
+//        navController.addOnDestinationChangedListener { _, destination, arguments ->
+//            when(destination.id) {
+//                R.id.reportFragment -> {
+//                    val argument = NavArgument.Builder().setDefaultValue(totalDonated).build()
+//                    destination.addArgument("totalDonated", argument)
+//
+//                }
+//            }
+//        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

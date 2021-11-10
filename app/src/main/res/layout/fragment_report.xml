@@ -6,7 +6,7 @@
     android:id="@+id/reportFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ReportFragment">
+    tools:context=".ui.report.ReportFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
