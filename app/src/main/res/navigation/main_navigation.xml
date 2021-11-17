@@ -15,6 +15,11 @@
             app:destination="@id/reportFragment"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_donateFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/reportFragment"
@@ -34,7 +39,12 @@
         android:id="@+id/aboutFragment"
         android:name="ie.wit.donationx.ui.about.AboutFragment"
         android:label="@string/action_about"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_donateFragment"
+            app:destination="@id/donateFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/donationDetailFragment"
         android:name="ie.wit.donationx.ui.detail.DonationDetailFragment"

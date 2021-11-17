@@ -42,4 +42,7 @@
     <string name="message">Message :</string>
     <string name="upvotes">UpVotes :</string>
 
+    <!--  api  -->
+    <string name="messageLoading">Please Wait while the Donations are Loading...</string>
+
 </resources>

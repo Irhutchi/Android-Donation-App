@@ -1,5 +1,6 @@
 package ie.wit.donationx.ui.report
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -16,6 +17,9 @@ import ie.wit.donationx.adapters.DonationClickListener
 import ie.wit.donationx.databinding.FragmentReportBinding
 import ie.wit.donationx.main.DonationXApp
 import ie.wit.donationx.models.DonationModel
+import ie.wit.donationx.utils.createLoader
+import ie.wit.donationx.utils.hideLoader
+import ie.wit.donationx.utils.showLoader
 
 class ReportFragment : Fragment(), DonationClickListener {
 
@@ -23,10 +27,21 @@ class ReportFragment : Fragment(), DonationClickListener {
     private var _fragBinding: FragmentReportBinding? = null
     private val fragBinding get() = _fragBinding!!
     private lateinit var reportViewModel: ReportViewModel
+    lateinit var loader : AlertDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+        loader = createLoader(requireActivity())
+
+        showLoader(loader,"Downloading Donations")
+        reportViewModel.observableDonationsList.observe(viewLifecycleOwner, Observer {
+                donations ->
+            donations?.let {
+                render(donations)
+                hideLoader(loader)
+            }
+        })
     }
 
     override fun onCreateView(

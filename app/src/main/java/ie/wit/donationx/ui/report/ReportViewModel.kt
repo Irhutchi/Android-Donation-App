@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ie.wit.donationx.models.DonationManager
 import ie.wit.donationx.models.DonationModel
+import timber.log.Timber
 
 class ReportViewModel : ViewModel() {
 
@@ -18,6 +19,12 @@ class ReportViewModel : ViewModel() {
     }
 
     fun load() {
-        donationsList.value = DonationManager.findAll()
+        try {
+            DonationManager.findAll(donationsList)
+            Timber.i("Retrofit Success : $donationsList.value")
+        }
+        catch (e: Exception) {
+            Timber.i("Retrofit Error : $e.message")
+        }
     }
 }
