@@ -15,9 +15,10 @@ internal fun getId(): Long {
     return lastId++
 }
 
+
 object DonationManager : DonationStore {
 
-    val donations = ArrayList<DonationModel>()
+    var donations = ArrayList<DonationModel>()
 
     override fun findAll(donationsList: MutableLiveData<List<DonationModel>>) {
 
@@ -37,8 +38,8 @@ object DonationManager : DonationStore {
         })
     }
 
-    override fun findById(id:Long) : DonationModel? {
-        val foundDonation: DonationModel? = donations.find { it.id == id }
+    override fun findById(id:String) : DonationModel? {
+        val foundDonation: DonationModel? = donations.find { it._id == id }
         return foundDonation
     }
 
@@ -62,6 +63,10 @@ object DonationManager : DonationStore {
             }
         })
     }
+
+//    override fun delete(id: String) {
+//        TODO("Not yet implemented")
+//    }
 
     fun logAll() {
         Timber.v("** Donations List **")
