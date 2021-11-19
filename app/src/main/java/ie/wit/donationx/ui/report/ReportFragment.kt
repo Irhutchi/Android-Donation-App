@@ -32,16 +32,7 @@ class ReportFragment : Fragment(), DonationClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
-        loader = createLoader(requireActivity())
 
-        showLoader(loader,"Downloading Donations")
-        reportViewModel.observableDonationsList.observe(viewLifecycleOwner, Observer {
-                donations ->
-            donations?.let {
-                render(donations)
-                hideLoader(loader)
-            }
-        })
     }
 
     override fun onCreateView(
@@ -63,6 +54,17 @@ class ReportFragment : Fragment(), DonationClickListener {
             val action = ReportFragmentDirections.actionReportFragmentToDonateFragment()
             findNavController().navigate(action)
         }
+
+        loader = createLoader(requireActivity())
+
+        showLoader(loader,"Downloading Donations")
+        reportViewModel.observableDonationsList.observe(viewLifecycleOwner, Observer {
+                donations ->
+            donations?.let {
+                render(donations)
+                hideLoader(loader)
+            }
+        })
         return root
     }
 

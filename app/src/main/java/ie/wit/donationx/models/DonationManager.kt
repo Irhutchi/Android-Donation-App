@@ -3,6 +3,7 @@ package ie.wit.donationx.models
 
 import androidx.lifecycle.MutableLiveData
 import ie.wit.donationx.api.DonationClient
+import ie.wit.donationx.api.DonationWrapper
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,9 +43,24 @@ object DonationManager : DonationStore {
     }
 
     override fun create(donation: DonationModel) {
-        donation.id = getId()
-        donations.add(donation)
-        logAll()
+
+        val call = DonationClient.getApi().post(donation)
+
+        call.enqueue(object : Callback<DonationWrapper> {
+            override fun onResponse(call: Call<DonationWrapper>,
+                                    response: Response<DonationWrapper>
+            ) {
+                val donationWrapper = response.body()
+                if (donationWrapper != null) {
+                    Timber.i("Retrofit ${donationWrapper.message}")
+                    Timber.i("Retrofit ${donationWrapper.data.toString()}")
+                }
+            }
+
+            override fun onFailure(call: Call<DonationWrapper>, t: Throwable) {
+                Timber.i("Retrofit Error : $t.message")
+            }
+        })
     }
 
     fun logAll() {
