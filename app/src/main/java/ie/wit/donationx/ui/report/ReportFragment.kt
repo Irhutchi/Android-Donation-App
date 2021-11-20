@@ -18,6 +18,7 @@ import ie.wit.donationx.adapters.DonationAdapter
 import ie.wit.donationx.adapters.DonationClickListener
 import ie.wit.donationx.databinding.FragmentReportBinding
 import ie.wit.donationx.main.DonationXApp
+import ie.wit.donationx.models.DonationManager
 import ie.wit.donationx.models.DonationModel
 import ie.wit.donationx.utils.SwipeToDeleteCallback
 import ie.wit.donationx.utils.createLoader
@@ -53,6 +54,7 @@ class ReportFragment : Fragment(), DonationClickListener {
                 donations ->
             donations?.let { render(donations as ArrayList<DonationModel>) }
             hideLoader(loader)
+
             checkSwipeRefresh()
         })
 
@@ -77,6 +79,7 @@ class ReportFragment : Fragment(), DonationClickListener {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val adapter = fragBinding.recyclerView.adapter as DonationAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
+                reportViewModel.delete(viewHolder.itemView.tag as String)
 
             }
         }

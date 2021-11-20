@@ -27,4 +27,13 @@ class ReportViewModel : ViewModel() {
             Timber.i("Retrofit Error : $e.message")
         }
     }
+    fun delete(id: String) {
+        try {
+            DonationManager.delete(id)
+            Timber.i("Retrofit Delete Success")
+        }
+        catch (e: java.lang.Exception) {
+            Timber.i("Retrofit Delete Error : $e.message")
+        }
+    }
 }

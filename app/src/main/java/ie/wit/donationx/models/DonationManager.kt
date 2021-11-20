@@ -64,9 +64,25 @@ object DonationManager : DonationStore {
         })
     }
 
-//    override fun delete(id: String) {
-//        TODO("Not yet implemented")
-//    }
+    fun delete(id: String) {
+        val call = DonationClient.getApi().delete(id)
+
+        call.enqueue(object : Callback<DonationWrapper> {
+            override fun onResponse(call: Call<DonationWrapper>,
+                                    response: Response<DonationWrapper>
+            ) {
+                val donationWrapper = response.body()
+                if (donationWrapper != null) {
+                    Timber.i("Retrofit Delete ${donationWrapper.message}")
+                    Timber.i("Retrofit Delete ${donationWrapper.data.toString()}")
+                }
+            }
+
+            override fun onFailure(call: Call<DonationWrapper>, t: Throwable) {
+                Timber.i("Retrofit Delete Error : $t.message")
+            }
+        })
+    }
 
     fun logAll() {
         Timber.v("** Donations List **")
